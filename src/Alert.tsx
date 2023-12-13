@@ -13,6 +13,8 @@ export const Alert = (props: AlertProps) => {
         `alert-${props.type}`,
         props.className,
     );
+
+    delete props.type;
     return (
         <div {...props} className={className}>
             {props.children}

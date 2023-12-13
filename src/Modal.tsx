@@ -6,8 +6,8 @@ import {
     createPortal,
     HTMLAttributes,
     PropsWithChildren,
-    RefObject, useEffect,
-    useRef, useState,
+    RefObject,
+    useRef,
 } from 'react';
 
 type ModalProps = {
@@ -15,6 +15,7 @@ type ModalProps = {
     onHide?: () => void;
     backdrop?: 'static' | true;
 } & HTMLDivProps;
+
 export const Modal = (props: ModalProps) => {
     const ref: RefObject<HTMLDivElement> = useRef();
 
@@ -54,10 +55,13 @@ type ModalHeaderProps = {
 Modal.Header = (props: ModalHeaderProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-header', props.className);
+    const closeButton = props.closeButton;
+    delete props.closeButton;
+
     return (
         <div {...props} className={className}>
             {props.children}
-            {props.closeButton && (
+            {closeButton && (
                 <button
                     type="button"
                     className="btn-close"

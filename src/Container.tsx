@@ -9,6 +9,7 @@ export const Container = (props: ContainerProps) => {
     if (props.fluid) {
         // @ts-expect-error: props.className should be of type string
         const className = classnames('container-fluid', props.className);
+        delete props.fluid;
         return (
             <div {...props} className={className}>
                 {props.children}
@@ -17,6 +18,8 @@ export const Container = (props: ContainerProps) => {
     }
     // @ts-expect-error: props.className should be of type string
     const className = classnames('container', props.className);
+    delete props.fluid;
+
     return (
         <div {...props} className={className}>
             {props.children}

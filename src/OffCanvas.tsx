@@ -36,6 +36,11 @@ export const OffCanvas = (props: OffCanvasProps) => {
         `offcanvas-${direction}`,
         props.className,
     );
+
+    delete props.show;
+    delete props.onHide;
+    delete props.direction;
+
     return createPortal(
         <div {...props} ref={ref} className={className} tabIndex={-1}>
             {props.children}
@@ -50,10 +55,13 @@ type OffCanvasHeaderProps = {
 OffCanvas.Header = (props: OffCanvasHeaderProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('offcanvas-header', props.className);
+    const closeButton = props.closeButton;
+    delete props.closeButton;
+
     return (
         <div {...props} className={className}>
             {props.children}
-            {props.closeButton && (
+            {closeButton && (
                 <button
                     type="button"
                     className="btn-close"
