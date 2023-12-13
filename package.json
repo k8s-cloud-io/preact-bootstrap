@@ -1,5 +1,5 @@
 {
-  "name": "@duskman72/preact-bootstrap",
+  "name": "@k8s-cloud-io/preact-bootstrap",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
