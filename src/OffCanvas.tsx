@@ -37,12 +37,13 @@ export const OffCanvas = (props: OffCanvasProps) => {
         props.className,
     );
 
-    delete props.show;
-    delete props.onHide;
-    delete props.direction;
+    const newProps = Object.assign({}, props);
+    delete newProps.show;
+    delete newProps.onHide;
+    delete newProps.direction;
 
     return createPortal(
-        <div {...props} ref={ref} className={className} tabIndex={-1}>
+        <div {...newProps} ref={ref} className={className} tabIndex={-1}>
             {props.children}
         </div>,
         document.getElementById('portal-container'),
@@ -55,13 +56,13 @@ type OffCanvasHeaderProps = {
 OffCanvas.Header = (props: OffCanvasHeaderProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('offcanvas-header', props.className);
-    const closeButton = props.closeButton;
-    delete props.closeButton;
+    const newProps = Object.assign({}, props);
+    delete newProps.closeButton;
 
     return (
-        <div {...props} className={className}>
+        <div {...newProps} className={className}>
             {props.children}
-            {closeButton && (
+            {props.closeButton && (
                 <button
                     type="button"
                     className="btn-close"

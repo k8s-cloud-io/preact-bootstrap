@@ -56,10 +56,11 @@ Modal.Header = (props: ModalHeaderProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-header', props.className);
     const closeButton = props.closeButton;
-    delete props.closeButton;
+    const newProps = Object.assign({}, props);
+    delete newProps.closeButton;
 
     return (
-        <div {...props} className={className}>
+        <div {...newProps} className={className}>
             {props.children}
             {closeButton && (
                 <button

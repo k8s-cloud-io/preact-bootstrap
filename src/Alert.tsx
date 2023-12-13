@@ -14,9 +14,10 @@ export const Alert = (props: AlertProps) => {
         props.className,
     );
 
-    delete props.type;
+    const newProps = Object.assign({}, props);
+    delete newProps.type;
     return (
-        <div {...props} className={className}>
+        <div {...newProps} className={className}>
             {props.children}
         </div>
     );

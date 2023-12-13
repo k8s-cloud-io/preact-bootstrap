@@ -18,10 +18,11 @@ export const Container = (props: ContainerProps) => {
     }
     // @ts-expect-error: props.className should be of type string
     const className = classnames('container', props.className);
-    delete props.fluid;
+    const newProps = Object.assign({}, props);
+    delete newProps.fluid;
 
     return (
-        <div {...props} className={className}>
+        <div {...newProps} className={className}>
             {props.children}
         </div>
     );

@@ -16,13 +16,14 @@ export const Checkbox = (props: CheckboxProps) => {
         classNames.push( 'form-check-inline' );
     }
 
-    delete props.label;
-    delete props.inline;
-    delete props.type;
+    const newProps = Object.assign({}, props);
+    delete newProps.label;
+    delete newProps.inline;
+    delete newProps.type;
 
     return (
         <div class={classNames.join(' ')}>
-            <input {...props} className="form-check-input" type={type} />
+            <input {...newProps} className="form-check-input" type={type} />
             {label && (
                 <label className="form-check-label">{label}</label>
             )}

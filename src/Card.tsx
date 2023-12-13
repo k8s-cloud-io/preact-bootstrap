@@ -18,7 +18,7 @@ type CardImageProps = HTMLAttributes<HTMLImageElement>;
 Card.Image = (props: CardImageProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('card-img-top', props.className);
-    return <img {...props} className={className} />;
+    return <img {...props} alt={props.alt} className={className} />;
 };
 
 Card.Body = (props: HTMLDivProps) => {
@@ -45,11 +45,11 @@ Card.Title = (props: CardTitleProps) => {
 Card.Header = (props: HTMLDivProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('card-header', props.className);
-    return <div className={className}>{props.children}</div>;
+    return <div {...props} className={className}>{props.children}</div>;
 };
 
 Card.Footer = (props: HTMLDivProps) => {
     // @ts-expect-error: props.className should be of type string
     const className = classnames('card-footer', props.className);
-    return <div className={className}>{props.children}</div>;
+    return <div {...props} className={className}>{props.children}</div>;
 };

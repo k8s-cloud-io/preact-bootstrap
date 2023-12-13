@@ -15,9 +15,10 @@ export const Navbar = (props: NavbarProps) => {
     }
     // @ts-expect-error: props.className should be of type string
     const className = classnames(classNameList.join(' '), props.className);
-    delete props.fixed;
+    const newProps = Object.assign({}, props);
+    delete newProps.fixed;
     return (
-        <nav {...props} className={className}>
+        <nav {...newProps} className={className}>
             <Container fluid>{props.children}</Container>
         </nav>
     );
