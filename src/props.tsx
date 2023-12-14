@@ -1,3 +1,3 @@
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 export type HTMLDivProps = PropsWithChildren & HTMLAttributes<HTMLDivElement>;

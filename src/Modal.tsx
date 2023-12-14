@@ -1,14 +1,14 @@
-import React from "react";
+import React from "preact";
 import { HTMLDivProps } from './props';
 import { Modal as BSModal } from 'bootstrap';
-import classnames from 'classnames';
+import {classnames} from './utils';
 import {
     createPortal,
     HTMLAttributes,
     PropsWithChildren,
     RefObject,
     useRef,
-} from 'react';
+} from 'preact/compat';
 
 type ModalProps = {
     show: boolean;
@@ -53,7 +53,6 @@ type ModalHeaderProps = {
     closeButton?: boolean;
 } & HTMLDivProps;
 Modal.Header = (props: ModalHeaderProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-header', props.className);
     const closeButton = props.closeButton;
     const newProps = Object.assign({}, props);
@@ -76,7 +75,6 @@ Modal.Header = (props: ModalHeaderProps) => {
 
 type ModalTitleProps = PropsWithChildren & HTMLAttributes<HTMLHeadingElement>;
 Modal.Title = (props: ModalTitleProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-title', props.className);
     return (
         <h5 {...props} className={className}>
@@ -86,7 +84,6 @@ Modal.Title = (props: ModalTitleProps) => {
 };
 
 Modal.Dialog = (props: HTMLDivProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-dialog', props.className);
     return (
         <div {...props} className={className}>
@@ -96,7 +93,6 @@ Modal.Dialog = (props: HTMLDivProps) => {
 };
 
 Modal.Body = (props: HTMLDivProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-body', props.className);
     return (
         <div {...props} className={className}>
@@ -106,7 +102,6 @@ Modal.Body = (props: HTMLDivProps) => {
 };
 
 Modal.Footer = (props: HTMLDivProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('modal-footer', props.className);
     return (
         <div {...props} className={className}>

@@ -1,8 +1,8 @@
-import React from "react";
+import React from "preact";
 import { Container } from './Container';
 import { HTMLDivProps } from './props';
-import classnames from 'classnames';
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import {classnames} from './utils';
+import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 type NavbarProps = {
     fixed?: 'top' | 'bottom';
@@ -13,7 +13,6 @@ export const Navbar = (props: NavbarProps) => {
     if (props.fixed) {
         classNameList.push(`fixed-${props.fixed}`);
     }
-    // @ts-expect-error: props.className should be of type string
     const className = classnames(classNameList.join(' '), props.className);
     const newProps = Object.assign({}, props);
     delete newProps.fixed;
@@ -26,7 +25,6 @@ export const Navbar = (props: NavbarProps) => {
 
 type NavbarBrandProps = PropsWithChildren & HTMLAttributes<HTMLAnchorElement>;
 Navbar.Brand = (props: NavbarBrandProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('navbar-brand', props.className);
     return (
         <a {...props} className={className}>

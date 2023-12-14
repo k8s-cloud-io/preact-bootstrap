@@ -1,14 +1,14 @@
-import React from "react";
+import React from "preact";
 import { HTMLDivProps } from './props';
 import { Offcanvas as BSOffCanvas } from 'bootstrap';
-import classnames from 'classnames';
+import {classnames} from './utils';
 import {
     createPortal,
     HTMLAttributes,
     PropsWithChildren,
     RefObject,
     useRef,
-} from 'react';
+} from 'preact/compat';
 
 type OffCanvasProps = {
     show: boolean;
@@ -31,7 +31,6 @@ export const OffCanvas = (props: OffCanvasProps) => {
 
     const direction = props.direction || 'start';
     const className = classnames(
-        // @ts-expect-error: props.className should be of type string
         'offcanvas',
         `offcanvas-${direction}`,
         props.className,
@@ -54,7 +53,6 @@ type OffCanvasHeaderProps = {
     closeButton?: boolean;
 } & HTMLDivProps;
 OffCanvas.Header = (props: OffCanvasHeaderProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('offcanvas-header', props.className);
     const newProps = Object.assign({}, props);
     delete newProps.closeButton;
@@ -77,7 +75,6 @@ OffCanvas.Header = (props: OffCanvasHeaderProps) => {
 type OffCanvasTitleProps = PropsWithChildren &
     HTMLAttributes<HTMLHeadingElement>;
 OffCanvas.Title = (props: OffCanvasTitleProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('offcanvas-title', props.className);
     return (
         <h5 {...props} className={className}>
@@ -87,7 +84,6 @@ OffCanvas.Title = (props: OffCanvasTitleProps) => {
 };
 
 OffCanvas.Body = (props: HTMLDivProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('offcanvas-body', props.className);
     return (
         <div {...props} className={className}>

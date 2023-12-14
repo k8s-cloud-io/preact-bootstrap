@@ -1,14 +1,14 @@
-import React from "react";
+import React from "preact";
 import { HTMLDivProps } from './props';
 import { Dropdown as BSDropDown } from 'bootstrap';
-import classnames from 'classnames';
+import {classnames} from './utils';
 
 import {
     HTMLAttributes,
     PropsWithChildren,
     RefObject,
     useRef,
-} from 'react';
+} from 'preact/compat';
 
 export const Dropdown = (props: HTMLDivProps) => {
     const ref: RefObject<HTMLDivElement> = useRef();
@@ -16,7 +16,6 @@ export const Dropdown = (props: HTMLDivProps) => {
         BSDropDown.getOrCreateInstance(ref.current);
     }
 
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('dropdown', props.className);
     return (
         <div {...props} className={className}>
@@ -35,7 +34,6 @@ Dropdown.Toggle = (props: DropdownToggleProps) => {
         return props.as;
     }
 
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('btn dropdown-toggle', props.className);
     return (
         <button
@@ -53,7 +51,6 @@ Dropdown.Toggle = (props: DropdownToggleProps) => {
 type DropdownItemProps = PropsWithChildren & HTMLAttributes<HTMLLIElement>;
 
 Dropdown.Item = (props: DropdownItemProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('dropdown-item', props.className);
     return (
         <li {...props} className={className}>

@@ -1,10 +1,9 @@
-import React from "react";
-import classnames from 'classnames';
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import React from "preact";
+import {classnames} from './utils';
+import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 type SelectProps = PropsWithChildren & HTMLAttributes<HTMLSelectElement>;
 export const Select = (props: SelectProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('form-control form-select', props.className);
     return (
         <select {...props} className={className}>

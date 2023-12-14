@@ -1,32 +1,38 @@
 {
   "name": "@k8s-cloud-io/preact-bootstrap",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "dist/index.js",
+  "source": "src/index.tsx",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist && webpack --progress -c ./webpack.config.js",
+    "build2": "rm -rf dist && parcel build",
     "deploy": "npm publish --access public"
   },
-  "types": "dist/index.d.ts",
   "peerDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "history": "^5.3.0",
+    "jquery": "^3.7.1",
     "preact": "^10.19.3"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "@types/bootstrap": "^5.2.10",
-    "@types/jquery": "^3.5.29",
     "bootstrap": "^5.3.2",
+    "history": "^5.3.0",
     "jquery": "^3.7.1",
     "preact": "^10.19.3"
   },
   "devDependencies": {
+    "@parcel/packager-ts": "2.10.3",
+    "@parcel/transformer-typescript-types": "2.10.3",
+    "@types/bootstrap": "^5.2.10",
+    "@types/jquery": "^3.5.29",
     "@types/react": "^18.2.43",
-    "classnames": "^2.3.2",
-    "history": "^5.3.0",
-    "path": "^0.12.7",
+    "parcel": "^2.10.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
-    "urlpattern-polyfill": "^9.0.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }

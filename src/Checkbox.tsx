@@ -1,5 +1,5 @@
-import React from "react";
-import { HTMLAttributes } from 'react';
+import React from "preact";
+import { HTMLAttributes } from 'preact/compat';
 
 type CheckboxProps = {
     label?: string;
@@ -22,7 +22,7 @@ export const Checkbox = (props: CheckboxProps) => {
     delete newProps.type;
 
     return (
-        <div class={classNames.join(' ')}>
+        <div className={classNames.join(' ')}>
             <input {...newProps} className="form-check-input" type={type} />
             {label && (
                 <label className="form-check-label">{label}</label>

@@ -1,9 +1,8 @@
-import React from "react";
+import React from "preact";
 import { HTMLDivProps } from './props';
-import classnames from 'classnames';
+import {classnames} from './utils';
 
 export const BorderSpinner = (props: HTMLDivProps) => {
-    // @ts-expect-error: props.className should be of type string
     const className = classnames('spinner-border', props.className);
     return (
         <div {...props} className={className} role="status">
