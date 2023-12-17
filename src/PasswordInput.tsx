@@ -1,6 +1,5 @@
-import React from "preact";
+import React, { HTMLAttributes } from "react";
 import {classnames} from './utils';
-import { HTMLAttributes } from 'preact/compat';
 
 type TextInputProps = HTMLAttributes<HTMLInputElement>;
 

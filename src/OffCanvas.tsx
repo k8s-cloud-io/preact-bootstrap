@@ -1,14 +1,14 @@
-import React from "preact";
+import React from "react";
 import { HTMLDivProps } from './props';
 import { Offcanvas as BSOffCanvas } from 'bootstrap';
 import {classnames} from './utils';
 import {
-    createPortal,
     HTMLAttributes,
     PropsWithChildren,
     RefObject,
     useRef,
-} from 'preact/compat';
+} from 'react';
+import {createPortal} from "react-dom";
 
 type OffCanvasProps = {
     show: boolean;

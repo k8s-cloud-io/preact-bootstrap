@@ -1,10 +1,10 @@
-import React from "preact";
-import { HTMLAttributes } from 'preact/compat';
+import React, { HTMLAttributes } from "react";
 
 type CheckboxProps = {
     label?: string;
     inline?: boolean;
     type: 'radio' | 'checkbox' | 'switch';
+    checked?: boolean;
 } & HTMLAttributes<HTMLInputElement>;
 export const Checkbox = (props: CheckboxProps) => {
     const classNames = ['form-check'];

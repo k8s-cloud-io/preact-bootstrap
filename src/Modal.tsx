@@ -1,14 +1,14 @@
-import React from "preact";
+import React from "react";
+import { createPortal } from 'react-dom';
 import { HTMLDivProps } from './props';
 import { Modal as BSModal } from 'bootstrap';
 import {classnames} from './utils';
 import {
-    createPortal,
     HTMLAttributes,
     PropsWithChildren,
     RefObject,
     useRef,
-} from 'preact/compat';
+} from 'react';
 
 type ModalProps = {
     show: boolean;

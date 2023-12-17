@@ -1,4 +1,4 @@
-import React from "preact";
+import React from "react";
 import { HTMLDivProps } from './props';
 import { Dropdown as BSDropDown } from 'bootstrap';
 import {classnames} from './utils';
@@ -8,7 +8,7 @@ import {
     PropsWithChildren,
     RefObject,
     useRef,
-} from 'preact/compat';
+} from 'react';
 
 export const Dropdown = (props: HTMLDivProps) => {
     const ref: RefObject<HTMLDivElement> = useRef();

@@ -1,6 +1,5 @@
-import React from "preact";
+import React, { HTMLAttributes, PropsWithChildren } from "react";
 import {classnames} from './utils';
-import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 type ButtonProps = PropsWithChildren & HTMLAttributes<HTMLButtonElement>;
 export const Button = (props: ButtonProps) => {

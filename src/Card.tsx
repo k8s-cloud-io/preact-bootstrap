@@ -1,7 +1,6 @@
-import React from "preact";
+import React, { HTMLAttributes, PropsWithChildren } from "react";
 import { HTMLDivProps } from './props';
 import {classnames} from './utils';
-import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 export const Card = (props: HTMLDivProps) => {
     const className = classnames('card', props.className);
@@ -12,7 +11,9 @@ export const Card = (props: HTMLDivProps) => {
     );
 };
 
-type CardImageProps = HTMLAttributes<HTMLImageElement>;
+type CardImageProps = {
+    alt?: string
+} & HTMLAttributes<HTMLImageElement>;
 
 Card.Image = (props: CardImageProps) => {
     const className = classnames('card-img-top', props.className);

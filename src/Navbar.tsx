@@ -1,8 +1,7 @@
-import React from "preact";
+import React,{ HTMLAttributes, PropsWithChildren } from "react";
 import { Container } from './Container';
 import { HTMLDivProps } from './props';
 import {classnames} from './utils';
-import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 type NavbarProps = {
     fixed?: 'top' | 'bottom';

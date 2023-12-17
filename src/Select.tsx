@@ -1,6 +1,5 @@
-import React from "preact";
+import React,{ HTMLAttributes, PropsWithChildren } from "react";
 import {classnames} from './utils';
-import { HTMLAttributes, PropsWithChildren } from 'preact/compat';
 
 type SelectProps = PropsWithChildren & HTMLAttributes<HTMLSelectElement>;
 export const Select = (props: SelectProps) => {
