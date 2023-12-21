@@ -20,12 +20,10 @@ export const Modal = (props: ModalProps) => {
     const ref: RefObject<HTMLDivElement> = useRef();
 
     if (ref.current) {
-        ref.current.removeEventListener('hide.bs.modal', props.onHide);
-        ref.current.addEventListener('hide.bs.modal', props.onHide);
+        const instance = BSModal.getOrCreateInstance(ref.current);
 
-        const instance = BSModal.getOrCreateInstance(ref.current, {
-            backdrop: props.backdrop || true,
-        });
+        ref.current.removeEventListener('hide.bs.modal',props.onHide);
+        ref.current.addEventListener('hide.bs.modal', props.onHide);
 
         if( props.show ) {
             instance.show();
@@ -34,12 +32,16 @@ export const Modal = (props: ModalProps) => {
         }
     }
 
-    const className = classnames(['modal', 'fade']);
+    const className = classnames(['modal fade']);
     const newProps = {};
     Object.keys(props).map( key => {
         if( key !== 'show' && key !== 'backdrop' && key !== 'onHide')
             newProps[key] = props[key];
     })
+
+    if( props.backdrop === 'static') {
+        newProps['data-bs-backdrop'] = 'static';
+    }
 
     return createPortal(
         <div {...newProps} ref={ref} className={className} tabIndex={-1}>

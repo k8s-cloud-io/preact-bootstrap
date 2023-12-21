@@ -1,6 +1,6 @@
 {
   "name": "@k8s-cloud-io/react-bootstrap",
-  "version": "1.0.3",
+  "version": "1.0.15",
   "main": "dist/index.js",
   "source": "src/index.tsx",
   "types": "dist/index.d.ts",
@@ -23,22 +23,19 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@types/react-dom": "^18.2.18",
-    "bootstrap": "^5.3.2",
-    "jquery": "^3.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "devDependencies": {
     "@parcel/packager-ts": "2.10.3",
     "@parcel/transformer-typescript-types": "2.10.3",
+    "@popperjs/core": "^2.11.8",
     "@types/bootstrap": "^5.2.10",
     "@types/jquery": "^3.5.29",
     "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.18",
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
     "parcel": "^2.10.3",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
