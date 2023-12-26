@@ -23,6 +23,12 @@ module.exports = [
             },
             resolve: {
                 extensions: ['.js', '.ts', '.tsx', '.mjs'],
+                alias: {
+                    react: "preact/compat",
+                    React:"preact/compat",
+                    "react-dom": "preact/compat",
+                    ReactDOM: "preact/compat"
+                }
             }
         }
     }

@@ -18,8 +18,8 @@ type OffCanvasProps = {
 export const OffCanvas = (props: OffCanvasProps) => {
     const ref: RefObject<HTMLDivElement> = useRef();
     if (ref.current) {
-        ref.current.removeEventListener('hide.bs.offcanvas', null);
-        ref.current.addEventListener('hide.bs.offcanvas', () => {
+        ref.current.removeEventListener('hidden.bs.offcanvas', null);
+        ref.current.addEventListener('hidden.bs.offcanvas', () => {
             props.onHide ? props.onHide() : () => {};
         });
 
