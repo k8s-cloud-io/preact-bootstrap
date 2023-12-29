@@ -1,7 +1,7 @@
-import React,{ HTMLAttributes, PropsWithChildren } from "react";
+import React, {HTMLAttributes, PropsWithChildren, RefObject} from "react";
 import {classnames} from './utils';
 
-type TextInputProps = HTMLAttributes<HTMLInputElement>;
+type TextInputProps = {ref?: RefObject<HTMLInputElement>} & HTMLAttributes<HTMLInputElement>;
 
 export const TextInput = (props: TextInputProps) => {
     const className = classnames('form-control', 'form-control-sm', 'rounded-1', props.className);
