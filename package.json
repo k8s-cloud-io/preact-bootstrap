@@ -1,6 +1,6 @@
 {
   "name": "@k8s-cloud-io/react-bootstrap",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "main": "dist/index.js",
   "source": "src/index.tsx",
   "types": "dist/index.d.ts",
