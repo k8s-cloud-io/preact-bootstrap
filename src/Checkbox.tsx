@@ -5,6 +5,8 @@ type CheckboxProps = {
     inline?: boolean;
     type: 'radio' | 'checkbox' | 'switch';
     checked?: boolean;
+    name?: string;
+    value?: any;
 } & HTMLAttributes<HTMLInputElement>;
 export const Checkbox = (props: CheckboxProps) => {
     const classNames = ['form-check'];
@@ -23,7 +25,7 @@ export const Checkbox = (props: CheckboxProps) => {
 
     return (
         <div className={classNames.join(' ')}>
-            <input {...newProps} className="form-check-input" type={type} />
+            <input {...newProps} className={`form-check-input${label ? ' me-2':''}`} type={type} />
             {label && (
                 <label className="form-check-label">{label}</label>
             )}
