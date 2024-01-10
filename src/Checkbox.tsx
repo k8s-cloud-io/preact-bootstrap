@@ -7,6 +7,7 @@ type CheckboxProps = {
     checked?: boolean;
     name?: string;
     value?: any;
+    className?: string;
 } & HTMLAttributes<HTMLInputElement>;
 export const Checkbox = (props: CheckboxProps) => {
     const classNames = ['form-check'];
@@ -16,6 +17,10 @@ export const Checkbox = (props: CheckboxProps) => {
 
     if( inline ) {
         classNames.push( 'form-check-inline' );
+    }
+
+    if( props.className ) {
+        classNames.push(props.className);
     }
 
     const newProps = Object.assign({}, props);
